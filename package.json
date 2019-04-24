@@ -14,13 +14,23 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.2",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "validation": "0.0.1"
+    "validation": "0.0.1",
+    "validator": "^10.11.0"
+
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
-  }
+    "nodemon": "^1.18.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakshi-patil/DevConnector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakshi-patil/DevConnector/issues"
+  },
+  "homepage": "https://github.com/sakshi-patil/DevConnector#readme"
 }
