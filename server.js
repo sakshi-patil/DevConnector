@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 
 // include local files
 //const keys = require('./config/keys')
@@ -10,6 +11,10 @@ const posts = require('./routes/api/posts');
 
 
 const app = express();
+
+//Body parser middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //DB config
 const db = require('./config/keys').mongoURI;
