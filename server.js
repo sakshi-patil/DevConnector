@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+const morgan = require('morgan')
+const passport = require('passport');
 
 // include local files
 //const keys = require('./config/keys')
@@ -12,6 +14,7 @@ const posts = require('./routes/api/posts');
 
 const app = express();
 
+app.use(morgan('dev'))
 //Body parser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -22,12 +25,16 @@ const db = require('./config/keys').mongoURI;
 
 // mongodb connection
 mongoose
-  .connect(db)
+  .connect(db, { useNewUrlParser: true } )
   .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
 
 
-app.get("/",(req, res) => res.send("Hello World"));
+//passport middleware
+app.use(passport.initialize());
+
+//passport config
+require('./config/passport')(passport);
 
 
 
