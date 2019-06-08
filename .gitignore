@@ -76,3 +76,4 @@ typings/
 
 # CUSTOM
 .idea/*
+temp/*
